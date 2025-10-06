@@ -28,9 +28,9 @@
 
     local Icons = {}
 
-    --    local Success, Response = pcall(function()
-    --        Icons = HttpService:JSONDecode(game:HttpGetAsync("")).icons
-    --    end)
+    local Success, Response = pcall(function()
+        Icons = HttpService:JSONDecode(game:HttpGetAsync("")).icons
+    end)
 
     if not Success then
         warn("\nQVuHUB Library – Không thể tải Feather Icons. Mã lỗi:" .. Response .. "\n")
