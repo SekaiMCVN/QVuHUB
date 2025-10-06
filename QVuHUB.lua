@@ -35,7 +35,7 @@ local Success, Response = pcall(function()
 end)
 
 if not Success then
-	warn("\nQVuHUB Library - Failed to load Feather Icons. Error code: " .. Response .. "\n")
+	warn("\nQVu HUB - Realm - Không tải được Biểu tượng Feather. Mã lỗi: " .. Response .. "\n")
 end	
 
 local function GetIcon(IconName)
@@ -224,7 +224,7 @@ local function LoadCfg(Config)
 				end    
 			end)
 		else
-			warn("QVuHUB Library Config Loader - Could not find ", a ,b)
+			warn("QVu HUB - Realm Config Loader - Không tìm thấy ", a ,b)
 		end
 	end)
 end
@@ -454,8 +454,8 @@ function QVuHUBLib:Init()
 			if isfile(QVuHUBLib.Folder .. "/" .. game.GameId .. ".txt") then
 				LoadCfg(readfile(QVuHUBLib.Folder .. "/" .. game.GameId .. ".txt"))
 				QVuHUBLib:MakeNotification({
-					Name = "Configuration",
-					Content = "Auto-loaded configuration for the game " .. game.GameId .. ".",
+					Name = "Cấu hình",
+					Content = "Cấu hình tự động tải cho trò chơi " .. game.GameId .. ".",
 					Time = 5
 				})
 			end
@@ -470,14 +470,14 @@ function QVuHUBLib:MakeWindow(WindowConfig)
 	local UIHidden = false
 
 	WindowConfig = WindowConfig or {}
-	WindowConfig.Name = WindowConfig.Name or "QVuHUB Library"
+	WindowConfig.Name = WindowConfig.Name or "QVu HUB - Realm"
 	WindowConfig.ConfigFolder = WindowConfig.ConfigFolder or WindowConfig.Name
 	WindowConfig.SaveConfig = WindowConfig.SaveConfig or false
 	WindowConfig.HidePremium = WindowConfig.HidePremium or false
 	if WindowConfig.IntroEnabled == nil then
 		WindowConfig.IntroEnabled = true
 	end
-	WindowConfig.IntroText = WindowConfig.IntroText or "QVuHUB Library"
+	WindowConfig.IntroText = WindowConfig.IntroText or "QVu HUB - Realm"
 	WindowConfig.CloseCallback = WindowConfig.CloseCallback or function() end
 	WindowConfig.ShowIcon = WindowConfig.ShowIcon or false
 	WindowConfig.Icon = WindowConfig.Icon or "rbxassetid://8834748103"
@@ -650,8 +650,8 @@ function QVuHUBLib:MakeWindow(WindowConfig)
 		MainWindow.Visible = false
 		UIHidden = true
 		QVuHUBLib:MakeNotification({
-			Name = "Interface Hidden",
-			Content = "Tap RightShift to reopen the interface",
+			Name = "Giao diện ẩn",
+			Content = "Nhấn RightShift để mở lại giao diện",
 			Time = 5
 		})
 		WindowConfig.CloseCallback()
@@ -1685,7 +1685,7 @@ function QVuHUBLib:MakeWindow(WindowConfig)
 					Position = UDim2.new(0, 15, 0, 15),
 					ImageTransparency = 0.4
 				}), "Text"),
-				AddThemeObject(SetProps(MakeElement("Label", "Unauthorised Access", 14), {
+				AddThemeObject(SetProps(MakeElement("Label", "Truy cập trái phép", 14), {
 					Size = UDim2.new(1, -38, 0, 14),
 					Position = UDim2.new(0, 38, 0, 18),
 					TextTransparency = 0.4
@@ -1694,12 +1694,12 @@ function QVuHUBLib:MakeWindow(WindowConfig)
 					Size = UDim2.new(0, 56, 0, 56),
 					Position = UDim2.new(0, 84, 0, 110),
 				}), "Text"),
-				AddThemeObject(SetProps(MakeElement("Label", "Premium Features", 14), {
+				AddThemeObject(SetProps(MakeElement("Label", "Tính năng cao cấp", 14), {
 					Size = UDim2.new(1, -150, 0, 14),
 					Position = UDim2.new(0, 150, 0, 112),
 					Font = Enum.Font.GothamBold
 				}), "Text"),
-				AddThemeObject(SetProps(MakeElement("Label", "This part of the script is locked to QVu Premium users. Purchase Premium in the Website server (https://sekairealm.blogspot.com/p/qvuhub-lua.html)", 12), {
+				AddThemeObject(SetProps(MakeElement("Label", "Phần này của tập lệnh chỉ dành cho người dùng QVu Premium. Mua Premium trên máy chủ trang web (https://sekairealm.blogspot.com/p/qvuhub-lua.html)", 12), {
 					Size = UDim2.new(1, -200, 0, 14),
 					Position = UDim2.new(0, 150, 0, 138),
 					TextWrapped = true,
@@ -1710,11 +1710,11 @@ function QVuHUBLib:MakeWindow(WindowConfig)
 		return ElementFunction   
 	end  
 	
-	QVuHUBLib:MakeNotification({
-		Name = "UI Library Upgrade",
-		Content = "New UI Library Available at https://sekairealm.blogspot.com/p/qvuhub-lua.html",
-		Time = 5
-	})
+--	QVuHUBLib:MakeNotification({
+--		Name = "Nâng cấp thư viện UI",
+--		Content = "Thư viện UI mới có tại https://sekairealm.blogspot.com/p/qvuhub-lua.html",
+--		Time = 5
+--	})
 	
 
 	
